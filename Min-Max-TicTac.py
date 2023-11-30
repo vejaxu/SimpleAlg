@@ -7,6 +7,7 @@ def evaluate(board):
     for row in board:
         if row.count('X') == 3:
             return 1
+            return 1 #max
         elif row.count('O') == 3:
             return -1
 
