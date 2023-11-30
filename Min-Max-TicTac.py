@@ -6,10 +6,9 @@ def evaluate(board):
     # 检查每一行
     for row in board:
         if row.count('X') == 3:
-            return 1
             return 1 #max
         elif row.count('O') == 3:
-            return -1
+            return -1 #min
 
     # 检查每一列
     for col in range(3):
