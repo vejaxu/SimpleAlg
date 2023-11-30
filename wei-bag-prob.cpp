@@ -30,3 +30,48 @@ void wei_bag_prob(){
 int main(){
     wei_bag_prob();
 }
+
+/* #include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main(){
+    int M, bagsize;
+    cin >> M >> bagsize;
+    
+    vector<int> weight(M, 0);
+    for(int i = 0; i < M; i ++){
+        cin >> weight[i];
+    }
+    
+    vector<int> value(M, 0);
+    for(int i = 0; i < M; i ++){
+        cin >> value[i];
+    }
+    
+    vector<vector<int>> dp(M, vector<int> (bagsize + 1, 0));
+    
+    //初始化背包容量不断增加
+    for(int j = weight[0]; j <= bagsize; j ++){
+        dp[0][j] = value[0];
+    }
+    
+    //背包容量为0
+    for(int i = 0; i < M; i ++){
+        dp[i][0] = 0;
+    }
+    
+    for(int i = 1; i < M; i ++){ //第一行我们已经初始化好了
+        for(int j = 0; j <= bagsize; j ++){
+            if(j < weight[i]){
+                dp[i][j] = dp[i-1][j];
+            }else{
+                dp[i][j] = max(dp[i-1][j], dp[i-1][j-weight[i]] + value[i]);
+            }
+        }
+    }
+    
+    cout << dp[M-1][bagsize];
+    return 0;
+} */
