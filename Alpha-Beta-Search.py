@@ -48,7 +48,7 @@ def max_min_alpha_beta(board, depth, is_max, alpha, beta):
                 if board[i][j] == ' ':
                     board[i][j] = 'X'
                     best = max(best, max_min_alpha_beta(board, depth + 1, not is_max, alpha, beta))
-                    board[i][j] = ' '
+                    board[i][j] = ' ' #回溯算法
                     alpha = max(alpha, best)
                     if beta <= alpha:
                         break
